@@ -40,3 +40,42 @@
 .research-read-link{display:inline-flex;align-items:center;gap:9px;color:#c0d17b;font-size:12px}
 .research-read-link:hover{color:#e0f39a}
 @media(max-width:700px){.research-section{padding:72px 20px 78px}.research-heading{margin-bottom:30px}.research-gallery{grid-template-columns:1fr;gap:38px}.research-paper-copy{padding:16px 2px 0}.research-paper-copy p{margin-top:14px}}
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.project-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.project-action:hover {
+  transform: translateY(-2px);
+}
+
+.project-action-primary {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+}
+
+.project-action-secondary {
+  background: transparent;
+  color: var(--ink);
+}
+
+.project-action-secondary:hover {
+  background: var(--lime);
+  border-color: var(--lime);
+}

@@ -6,52 +6,35 @@ import {
   Linkedin,
   Mail,
   MoveUpRight,
+  Play,
 } from "lucide-react";
 
 const projects = [
   {
     number: "01",
-    type: "APPLIED AI · DOCUMENT INTELLIGENCE",
-    title: "DocuFlow AI",
+    type: "AI Agent Framework",
+    title: "Agent Harness",
     description:
-      "An AI-assisted document processing framework designed to extract, normalize, and structure complex financial issuance information into consistent schemas.",
+      "A LangGraph-powered multi-agent system with intelligent routing, Text-to-SQL, web search, SQL safety checks, and result verification.",
     tags: ["LLMs", "Python", "Structured extraction"],
-    result: "4 document types standardized",
-    note: "Professional experience · BlackRock",
-    link: "#experience",
+    result: "Agent Orchestration",
+    note: "personal project",
+    githubUrl: "https://github.com/VarshaChaudhary13/Agent-Harness",
+    demoUrl: "",
   },
+  
+  
   {
     number: "02",
-    type: "MACHINE LEARNING · SEARCH",
-    title: "Session-based product attributes",
-    description:
-      "A deep-learning pipeline using behavioural and session signals to predict product attributes and support search ranking.",
-    tags: ["PySpark", "Databricks", "Transformers"],
-    result: "74.62% reported accuracy",
-    note: "Professional experience · Meesho",
-    link: "#experience",
-  },
-  {
-    number: "03",
-    type: "RESEARCH · NLP",
-    title: "Extractive text summarization",
-    description:
-      "A research project exploring n-gram features, TF-IDF, and frequency-domain signals for extractive summarization across news and instructional text.",
-    tags: ["NLP", "TF-IDF", "FFT"],
-    result: "Research across public datasets",
-    note: "Academic research",
-    link: "#research",
-  },
-  {
-    number: "04",
     type: "GENERATIVE AI · RETRIEVAL",
     title: "RAG question-answering prototype",
     description:
       "A retrieval-augmented question-answering prototype that grounds generated responses in retrieved reference material.",
     tags: ["RAG", "Llama", "FastAPI"],
     result: "Retrieval + generation workflow",
-    note: "Personal / internship project",
-    link: "#projects",
+    note: "Personal project",
+    githubUrl: "https://github.com/VarshaChaudhary13/RAG-implementation",
+    demoUrl: "",
   },
 ];
 
@@ -129,7 +112,7 @@ export default function Home() {
         <div className="project-grid">
           {projects.map((project) => (
             <article className="project-card" key={project.number}>
-              <div className="project-top"><span>{project.number} / 04</span><a href={project.link} aria-label={`Learn more about ${project.title}`}><ArrowUpRight size={18} /></a></div>
+              <div className="project-top"><span>{project.number} / 04</span><a href={project.githubUrl} aria-label={`Learn more about ${project.title}`}><ArrowUpRight size={18} /></a></div>
               <div className="project-visual">
                 {project.number === "01" ? <div className="doc-visual"><div className="doc-sheet"><span /><span /><span className="short" /><i>AI</i></div><ArrowUpRight className="visual-arrow" size={25} /></div> :
                  project.number === "02" ? <div className="graph-visual"><div className="graph-line line-a" /><div className="graph-line line-b" /><div className="graph-node n1" /><div className="graph-node n2" /><div className="graph-node n3" /><div className="graph-node n4" /><div className="graph-node n5" /><span className="graph-label">SESSION → SIGNAL → RANK</span></div> :
@@ -141,7 +124,34 @@ export default function Home() {
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                <div className="project-bottom"><div><strong>{project.result}</strong><small>{project.note}</small></div><a href={project.link} className="round-link" aria-label={`See ${project.title}`}><ArrowUpRight size={17} /></a></div>
+                <div className="project-bottom"><div><strong>{project.result}</strong><small>{project.note}</small></div><a href={project.githubUrl} className="round-link" aria-label={`See ${project.title}`}><ArrowUpRight size={17} /></a></div>
+                <div className="project-actions">
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-action project-action-primary"
+                    >
+                      <Github size={16} />
+                      View Code
+                      <ArrowUpRight size={14} />
+                    </a>
+                  )}
+
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-action project-action-secondary"
+                    >
+                      <Play size={16} />
+                      Watch Demo
+                      <ArrowUpRight size={14} />
+                    </a>
+                  )}
+                </div>
               </div>
             </article>
           ))}
