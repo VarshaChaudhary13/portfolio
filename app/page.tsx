@@ -36,13 +36,26 @@ const projects = [
     githubUrl: "https://github.com/VarshaChaudhary13/RAG-implementation",
     demoUrl: "",
   },
+  {
+    number: "03",
+    type: "AGENTIC AI · GOOGLE WORKSPACE",
+    title: "Workspace Assistant",
+    description:
+      "An AI assistant that can look up information in Gmail, Google Drive, and Google Calendar using read-only Google API scopes.",
+    tags: ["Google ADK", "Gemini"],
+    result: "Google Workspace assistant",
+    note: "Personal project",
+    githubUrl: "https://github.com/VarshaChaudhary13/workspace-assistant/tree/main",
+    demoUrl:
+      "https://drive.google.com/file/d/1j_osrIhmV3zmkblUX_sJnEard7XecwTm/view?usp=sharing",
+  },
 ];
 
 const skills = [
   { title: "Software engineering", items: "Python · C++ · SQL · TypeScript · REST APIs · Git" },
-  { title: "AI & machine learning", items: "PyTorch · scikit-learn · Transformers · RAG · LLM applications" },
+  { title: "AI & machine learning", items: "PyTorch · scikit-learn · Transformers · RAG · Gemini · Google ADK · LLM applications" },
   { title: "Data systems", items: "PySpark · Databricks · SQL workflows · Data processing" },
-  { title: "Backend & cloud", items: "FastAPI · Docker · AWS · CI/CD · Service integration" },
+  { title: "Backend & cloud", items: "FastAPI · Docker · AWS · CI/CD · Google Workspace APIs · Service integration" },
 ];
 
 export default function Home() {
@@ -112,11 +125,11 @@ export default function Home() {
         <div className="project-grid">
           {projects.map((project) => (
             <article className="project-card" key={project.number}>
-              <div className="project-top"><span>{project.number} / 04</span><a href={project.githubUrl} aria-label={`Learn more about ${project.title}`}><ArrowUpRight size={18} /></a></div>
+              <div className="project-top"><span>{project.number} / {String(projects.length).padStart(2, "0")}</span><a href={project.githubUrl} aria-label={`Learn more about ${project.title}`}><ArrowUpRight size={18} /></a></div>
               <div className="project-visual">
                 {project.number === "01" ? <div className="doc-visual"><div className="doc-sheet"><span /><span /><span className="short" /><i>AI</i></div><ArrowUpRight className="visual-arrow" size={25} /></div> :
                  project.number === "02" ? <div className="graph-visual"><div className="graph-line line-a" /><div className="graph-line line-b" /><div className="graph-node n1" /><div className="graph-node n2" /><div className="graph-node n3" /><div className="graph-node n4" /><div className="graph-node n5" /><span className="graph-label">SESSION → SIGNAL → RANK</span></div> :
-                 project.number === "03" ? <div className="text-visual"><span>the meaning</span><span className="highlight-word">between</span><span>the lines<span className="cursor">_</span></span><small>EXTRACT · SCORE · SUMMARIZE</small></div> :
+                 project.number === "03" ? <div className="rag-visual"><div className="rag-node">GMAIL</div><div className="rag-node">DRIVE</div><div className="rag-node">CALENDAR</div><div className="rag-node accent">ASK AI</div></div> :
                  <div className="rag-visual"><div className="rag-node">QUERY</div><div className="rag-connector">↓</div><div className="rag-node accent">RETRIEVE</div><div className="rag-connector">↓</div><div className="rag-node">GENERATE</div></div>}
               </div>
               <div className="project-body">
